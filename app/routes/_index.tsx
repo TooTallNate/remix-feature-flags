@@ -1,4 +1,6 @@
-import type { MetaFunction } from "@vercel/remix";
+import { useLoaderData } from "@remix-run/react";
+import type { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
+import { getFlags } from "~/flags.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,7 +9,13 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function loader({ request }: LoaderFunctionArgs) {
+  const flags = await getFlags(request);
+  return { flags };
+}
+
 export default function Index() {
+  const { flags } = useLoaderData<typeof loader>();
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
@@ -36,6 +44,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <pre>{JSON.stringify(flags, null, 2)}</pre>
     </div>
   );
 }
