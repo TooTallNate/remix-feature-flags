@@ -18,32 +18,29 @@ export default function Index() {
   const { flags } = useLoaderData<typeof loader>();
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <h1>Remix + Vercel</h1>
+      <h2>Vercel Toolbar and Feature Flags Example</h2>
       <ul>
         <li>
           <a
             target="_blank"
-            href="https://remix.run/tutorials/blog"
+            href="https://vercel.com/docs/workflow-collaboration/vercel-toolbar"
             rel="noreferrer"
           >
-            15m Quickstart Blog Tutorial
+            Vercel Toolbar Documentation
           </a>
         </li>
         <li>
           <a
             target="_blank"
-            href="https://remix.run/tutorials/jokes"
+            href="https://vercel.com/docs/workflow-collaboration/feature-flags"
             rel="noreferrer"
           >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
+            Vercel Feature Flags Documentation
           </a>
         </li>
       </ul>
+      <h2>Current Feature Flags</h2>
       <pre>{JSON.stringify(flags, null, 2)}</pre>
     </div>
   );
