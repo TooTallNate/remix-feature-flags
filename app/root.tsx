@@ -34,9 +34,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <script
             src="https://vercel.live/_next-live/feedback/feedback.js"
             data-explicit-opt-in="true"
-            data-owner-id={"team_MtLD9hKuWAvoDd3KmiHs9zUg"}
-            data-project-id="prj_sgUa9M8ZTgUBNpOLjAalKeILdsec"
-            data-branch="main"
+            data-owner-id="__REPLACE_WITH_VERCEL_ORG_ID__"
+            data-project-id="__REPLACE_WITH_VERCEL_PROJECT_ID__"
+            data-branch="__REPLACE_WITH_GIT_BRANCH_NAME__"
           />
         ) : null}
       </body>

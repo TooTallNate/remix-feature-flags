@@ -1,4 +1,4 @@
-import { parse } from 'cookie';
+import { parse } from "cookie";
 import {
   decrypt,
   type FlagDefinitionsType,
@@ -22,14 +22,14 @@ export const FLAGS = {
 } as const satisfies FlagDefinitionsType;
 
 export type Flags = {
-  -readonly [Name in keyof typeof FLAGS]: (typeof FLAGS)[Name]['options'][number]['value'];
-}
+  -readonly [Name in keyof typeof FLAGS]: (typeof FLAGS)[Name]["options"][number]["value"];
+};
 
 export async function getFlags(request: Request) {
   // Default values
   const flags: Flags = {
     exampleFlag: false,
-    newFeature: false
+    newFeature: false,
   };
 
   // Apply overrides
